@@ -628,6 +628,21 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sdm660-common/proprietary/vendor/radio/qcril_database/upgrade/4_version_qcrildb.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/4_version_qcrildb.sql \
     vendor/motorola/sdm660-common/proprietary/vendor/radio/qcril_database/upgrade/5_version_qcrildb.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/5_version_qcrildb.sql
 
+# FM
+PRODUCT_COPY_FILES += \
+    vendor/motorola/sdm660-common/proprietary/etc/permissions/com.motorola.motosignature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.motosignature.xml \
+    vendor/motorola/sdm660-common/proprietary/etc/permissions/com.motorola.software.fmradioservice.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.software.fmradioservice.xml \
+    vendor/motorola/sdm660-common/proprietary/framework/com.motorola.motosignature.jar:system/framework/com.motorola.motosignature.jar
+
+PRODUCT_PACKAGES += \
+    FMPlayer \
+    FMRadioService \
+    libqcomfm_jni \
+    MotoSignatureApp \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += qcom.fmradio
+
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm@1.0 \
     com.quicinc.cne.api@1.0 \
